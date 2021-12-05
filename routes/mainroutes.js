@@ -4,9 +4,9 @@ const fs = require("fs");
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/autherization");
 
 // Welcome Page
-router.get("/", forwardAuthenticated, (req, res) =>
-  res.render("welcome", { user: req.session.name, layout: "layouts/layout"  })
-);
+router.get("/", isLoggedIn, (req, res) => {
+  res.render("welcome", { user: req.user, isLoggedIn: req.isLogged, layout: "layouts/layout" });
+});
 
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
@@ -21,5 +21,17 @@ router.get('/resources/png/:filename', function(req, res){
   res.header("content-type","image/png");
   res.send(file);
 })
+
+function isLoggedIn(req, res, next) {
+  if(!req.isAuthenticated())
+  {
+      req.isLogged = true
+  }
+  else
+  {
+     req.isLogged = false
+  }
+  return next();
+}
 
 module.exports = router;

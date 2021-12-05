@@ -7,11 +7,11 @@ const User = require("../models/userModel");
 
 //show login page function
 exports.login = (req, res) => 
-    res.render("login", {layout: "layouts/layout"});
+    res.render("login", { user: req.user, layout: "layouts/layout" });
 
 //show register page function
 exports.register = (req, res) => 
-    res.render("register", {layout: "layouts/layout"});
+    res.render("register", { user: req.user, layout: "layouts/layout" });
 
 //function to register a user.
 exports.registerUser = (req, res) => {
@@ -67,7 +67,7 @@ exports.registerUser = (req, res) => {
 //function to login a user.
 exports.loginUser = (req, res, next) => {
     passport.authenticate('local',{
-        successRedirect: "/dashboard",
+        successRedirect: "/",
         failureRedirect: "/users/login",
         failureFlash: true
     })(req, res, next);
@@ -78,5 +78,5 @@ exports.logout = (req, res, next) => {
     req.logout();
     req.flash("success_msg", "You have been logged out.");
     req.session.destroy();
-    res.redirect("/users/login");
+    res.redirect("/");
 };

@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const userController = require('../controllers/userControllers');
-const { forwardAuthentication, forwardAuthenticated } = require('../config/autherization');
+const { forwardAuthenticated } = require('../config/autherization');
 
 //login Page
 router.get('/login', forwardAuthenticated, userController.login);

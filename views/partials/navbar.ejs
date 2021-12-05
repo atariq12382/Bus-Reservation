@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #fdf5e6; width: auto;">
+    <div class="container-fluid">
+             <a class="navbar-brand" href="/" style="padding-left: 25px;"><img src="/resources/png/logo.png" alt="" width="75" height="75"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText" style="padding-left: 50px;">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color:darkblue;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:darkblue;">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:darkblue;">Pricing</a>
+          </li>
+        </ul>
+        <% if(isLoggedIn) { %>
+            <a class="nav-link" href="/users/login" style="color:darkblue; font-size: medium;">Login</a>
+            <a class="nav-link" href="/users/register" style="color:darkblue; font-size: medium;">Register</a>
+        <% } else { %>
+            <a class="nav-link" href="/dashboard" style="color:darkblue; font-size: medium;"><%= user.name %></a>
+            <a class="nav-link" href="/users/logout" style="color:darkblue; font-size: medium;">Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
