@@ -22,6 +22,7 @@ router.get('/resources/png/:filename', function(req, res){
   res.send(file);
 })
 
+
 function isLoggedIn(req, res, next) {
   if(!req.isAuthenticated())
   {
