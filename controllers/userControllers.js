@@ -47,7 +47,7 @@ exports.registerUser = (req, res) => {
             if(user)
             {
                 error.push({ msg: "Email already exists" });
-                res.render("register",{ error, name, email, password, contact, address });
+                res.render("login",{ error, name, email, password, contact, address });
                 res.status(400).json();
             }
             else
