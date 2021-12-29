@@ -3,10 +3,13 @@ const router = express.Router();
 const fs = require("fs");
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/autherization");
 const mainController = require("../controllers/mainControllers");
+const Bus = require("../models/buses");
+const Routes = require("../models/routes");
 
 // Welcome Page
 router.get("/", isLoggedIn, (req, res) => {
   res.render("welcome", { user: req.user, isLoggedIn: req.isLogged, layout: "layouts/layout" });
+  
 });
 
 router.get("/complaints" , (req, res) => {
