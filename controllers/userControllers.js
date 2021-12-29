@@ -30,7 +30,7 @@ exports.registerUser = (req, res) => {
     const { name, email, password, contact, address } = req.body;
     if(!name || !email || !password || !contact || !address)
     {
-        error.push({ msg: "Entter data in all the fields." });
+        error.push({ msg: "Enter data in all the fields." });
     }
     if(password.length < 6) 
     {

@@ -2,7 +2,7 @@
     <%- include('./partials/navbar3') %>
     <%- include('./partials/messages') %>
     <div class= "mainform">
-      <form>
+      <form action="/complaints" method="post">
       <!--Header-->
       <div class = "header">
       <h1><b>Complaint Form</b></h1>
@@ -12,8 +12,8 @@
       <br><br>
      
       <div class="form-group">
-        <label for="ctitle"><b>Complaint Title</b></label> 
-        <input type="text" class="form-control" id="ctitle" placeholder="Enter complaint title" name="ctitle" required="">
+        <label for="title"><b>Complaint Title</b></label> 
+        <input type="title" class="form-control" id="title" placeholder="Enter complaint title" name="title" required>
       </div>
        <!-- Name-->
       <div class="form-group">
@@ -23,26 +23,27 @@
         <br>
       <!-- Phone number-->
       <div class="form-group">
-          <label for="phoneNo"> <b>Phone Number: </b> </label>
-          <input type="text" id="phone" class="form-control" placeholder="Enter Phone Number" name = "phoneNo">
+          <label for="contact"> <b>Contact: </b> </label>
+          <input type="contact" id="contact" class="form-control" placeholder="Enter contact" name = "contact" required>
         </div>
         <br/>
         <div class="form-group">
           <label for="email"> <b>Email: </b> </label>
-          <input type="text" id="email" class="form-control" placeholder="email@domain.tld" name = "email" required>
+          <input type="email" id="email" class="form-control" placeholder="email@domain.tld" name = "email" required>
         </div>
         <br>
       <br>
       <!-- Complaint Details-->
-      <label for="subject"><b>Complaint Details:</b></label>
-      <textarea id="subject" name="subject" placeholder="Enter your complaint details..." style="height:200px"></textarea>
+      <label for="details"><b>Complaint Details:</b></label>
+      <textarea id="details" name="details" placeholder="Enter your complaint details..." style="height:200px" required></textarea>
   
       <!--Submit Button-->
-      <button type="button" class="btn btn-outline-primary">Submit</button>
+      <button type="submit"  class="btn btn-outline-primary">Submit</button>
       
   
       </form>
   </div>
+  <%- include('./partials/footer') %>
 </body>
 <style>
     

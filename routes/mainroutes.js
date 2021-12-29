@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/autherization");
+const mainController = require("../controllers/mainControllers");
 
 // Welcome Page
 router.get("/", isLoggedIn, (req, res) => {
@@ -11,6 +12,8 @@ router.get("/", isLoggedIn, (req, res) => {
 router.get("/complaints" , (req, res) => {
   res.render("complaints", { layout: "layouts/layout" });
 });
+
+router.post("/complaints", mainController.SaveComplaints);
 
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
