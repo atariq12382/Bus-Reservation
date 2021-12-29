@@ -8,6 +8,10 @@ router.get("/", isLoggedIn, (req, res) => {
   res.render("welcome", { user: req.user, isLoggedIn: req.isLogged, layout: "layouts/layout" });
 });
 
+router.get("/complaints" , (req, res) => {
+  res.render("complaints", { layout: "layouts/layout" });
+});
+
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {
@@ -21,6 +25,7 @@ router.get('/resources/png/:filename', function(req, res){
   res.header("content-type","image/png");
   res.send(file);
 })
+
 
 
 function isLoggedIn(req, res, next) {
