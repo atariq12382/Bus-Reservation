@@ -18,6 +18,11 @@ router.get("/complaints" , (req, res) => {
 
 router.post("/complaints", mainController.SaveComplaints);
 
+router.get("/schedule/:page", isLoggedIn, mainController.ShowSchedule);
+
+router.get("/schedule/fo/:from/:page", isLoggedIn, mainController.ShowScheduleFrom);
+
+router.get("/schedule/to/:to/:page", isLoggedIn, mainController.ShowScheduleTo);
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {

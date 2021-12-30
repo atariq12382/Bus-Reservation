@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Complaint = require("../models/complaints");
+const Routes = require("../models/routes");
 
 exports.SaveComplaints = (req, res) => {
     let error = [];
@@ -28,3 +29,53 @@ exports.SaveComplaints = (req, res) => {
         .catch(err => console.log(err));
     }
 }
+
+exports.ShowSchedule = async (req, res) => {
+   var perPage = 7;
+   var page = req.params.page || 1;
+   Routes
+        .find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, routes) {
+            Routes.count().exec(function(err, count) {
+                if(err) return next(err)
+                res.render("schedule",{ routes: routes, user: req.user, current: page, pages: Math.ceil(count/perPage), isLoggedIn: req.isLogged, layout: "layouts/layout" });
+            })
+        })
+
+};
+
+exports.ShowScheduleFrom = async (req, res) => {
+    var perPage = 5;
+    var page = req.params.page || 1;
+    var from = req.params.from;
+    Routes
+         .find({ from: from })
+         .skip((perPage * page) - perPage)
+         .limit(perPage)
+         .exec(function(err, routes) {
+             Routes.count({ from: from }).exec(function(err, count) {
+                 if(err) return next(err)
+                 res.render("schedulefrom",{ routes: routes, from: from, user: req.user, current: page, pages: Math.ceil(count/perPage), isLoggedIn: req.isLogged, layout: "layouts/layout" });
+             })
+         })
+ 
+ };
+
+ exports.ShowScheduleTo = async (req, res) => {
+    var perPage = 5;
+    var page = req.params.page || 1;
+    var to = req.params.to;
+    Routes
+         .find({ to: to })
+         .skip((perPage * page) - perPage)
+         .limit(perPage)
+         .exec(function(err, routes) {
+             Routes.count({ to: to }).exec(function(err, count) {
+                 if(err) return next(err)
+                 res.render("scheduleto",{ routes: routes, to: to, user: req.user, current: page, pages: Math.ceil(count/perPage), isLoggedIn: req.isLogged, layout: "layouts/layout" });
+             })
+         })
+ 
+ };

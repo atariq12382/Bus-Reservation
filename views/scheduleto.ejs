@@ -1,0 +1,99 @@
+<body>
+    <%- include('./partials/navbar') %>
+    <div class="container" style="padding-top: 30px;">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-8">
+                <h2>
+                  <b>Schedule</b>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown" style="float: left; padding-top: 20px; padding-bottom: 20px; padding-right: 20px;" >
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              From
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/schedule/fo/Faisalabad/1">Faisalabad</a></li>
+              <li><a class="dropdown-item" href="/schedule/fo/Lahore/1">Lahore</a></li>
+              <li><a class="dropdown-item" href="/schedule/fo/Islamabad/1">Islamabad</a></li>
+            </ul>
+          </div>
+          <div class="dropdown" style="float: left; padding: 20px;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              To
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/schedule/to/Faisalabad/1">Faisalabad</a></li>
+              <li><a class="dropdown-item" href="/schedule/to/Lahore/1">Lahore</a></li>
+              <li><a class="dropdown-item" href="/schedule/to/Islamabad/1">Islamabad</a></li>
+              <li><a class="dropdown-item" href="/schedule/to/Multan/1">Multan</a></li>
+              <li><a class="dropdown-item" href="/schedule/to/Peshawer/1">Peshawer</a></li>
+              <li><a class="dropdown-item" href="/schedule/to/Karachi/1">Karachi</a></li>
+              <li><a class="dropdown-item" href="/schedule/to/Hyderabad/1">Hyderabad</a></li>
+              <li><a class="dropdown-item" href="/schedule/to/Quetta/1">Quetta</a></li>
+            </ul>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Route Number</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Available</th>
+                <th>Fare</th>
+                <th>Bus Number</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (var a = 0; a < routes.length; a++) { %>
+              <tr>
+                <td><%= routes[a].number%></td>
+                <td><%= routes[a].from%></td>
+                <td><%= routes[a].to%></td>
+                <td><%= routes[a].date%>/<%= routes[a].month%>/<%= routes[a].year%></td>
+                <td><%= routes[a].time%> pm</td>
+                <td><%= routes[a].available%></td>
+                <td>Rs. <%= routes[a].fare%></td>
+                <td><%= routes[a].bno%></td>
+                <td style="align-items: center;"><button type="button" class="btn btn-success">Book</button></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+          <% if (pages > 0) { %>
+            <ul class="pagination">
+                <% if (current == 1) { %>
+                    <li class="disabled"><a class="page-link">First</a></li>
+                <% } else { %>
+                    <li class="page-item"><a href="/schedule/to/<%= to%>/1" class="page-link">First</a></li>
+                <% } %>
+                <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                <% if (i !== 1) { %>
+                    <li class="disabled"><a class="page-link">...</a></li>
+                <% } %>
+                <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                    <% if (i == current) { %>
+                        <li class="active page-item"><a class="page-link"><%= i %></a></li>
+                    <% } else { %>
+                        <li class="page-item"><a href="/schedule/to/<%= to%>/<%= i %>" class="page-link"><%= i %></a></li>
+                    <% } %>
+                    <% if (i == Number(current) + 4 && i < pages) { %>
+                        <li class="disabled"><a class="page-link">...</a></li>
+                    <% } %>
+                <% } %>
+                <% if (current == pages) { %>
+                    <li class="disabled"><a class="page-link">Last</a></li>
+                <% } else { %>
+                    <li class="page-item"><a href="/schedule/to/<%= to%>/<%= pages %>" class="page-link">Last</a></li>
+                <% } %>
+            </ul>
+        <% } %>
+      </div>
+    <%- include('./partials/footer') %>
+</body>
