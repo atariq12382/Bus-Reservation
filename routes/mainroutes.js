@@ -16,6 +16,7 @@ router.get("/complaints" , (req, res) => {
   res.render("complaints", { layout: "layouts/layout" });
 });
 
+
 router.post("/complaints", mainController.SaveComplaints);
 
 router.get("/schedule/:page", isLoggedIn, mainController.ShowSchedule);
@@ -25,6 +26,10 @@ router.get("/schedule/fo/:from/:page", isLoggedIn, mainController.ShowScheduleFr
 router.get("/schedule/to/:to/:page", isLoggedIn, mainController.ShowScheduleTo);
 
 router.post("/searchschedule/:page", isLoggedIn, mainController.SearchSchedule);
+
+router.get("/aboutus" , (req, res) => {
+  res.render("aboutus", { layout: "layouts/layout" });
+});
 
 router.get("/book/:from/:to/:date/:month/:year/:fare", isLoggedIn, mainController.bookPage);
 

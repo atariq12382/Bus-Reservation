@@ -1,0 +1,316 @@
+[{
+  "_id": {
+    "$oid": "61ccb84c0867eb0f040fd1d5"
+  },
+  "number": 1,
+  "date": "1",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Faisalabad",
+  "to": "Lahore",
+  "capacity": 35,
+  "available": 35,
+  "fare": "650",
+  "bno": "1234"
+},{
+  "_id": {
+    "$oid": "61ccb9690867eb0f040fd1d6"
+  },
+  "number": 2,
+  "date": "2",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Faisalabad",
+  "to": "Islamabad",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1000",
+  "bno": "5678"
+},{
+  "_id": {
+    "$oid": "61ccb98e0867eb0f040fd1d7"
+  },
+  "number": 3,
+  "date": "3",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Faisalabad",
+  "to": "Multan",
+  "capacity": 35,
+  "available": 35,
+  "fare": "700",
+  "bno": "4321"
+},{
+  "_id": {
+    "$oid": "61ccb9c00867eb0f040fd1d8"
+  },
+  "number": 4,
+  "date": "4",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Faisalabad",
+  "to": "Peshawer",
+  "capacity": 35,
+  "available": 35,
+  "fare": "850",
+  "bno": "8765"
+},{
+  "_id": {
+    "$oid": "61ccb9ea0867eb0f040fd1d9"
+  },
+  "number": 5,
+  "date": "5",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Faisalabad",
+  "to": "Karachi",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1500",
+  "bno": "4231"
+},{
+  "_id": {
+    "$oid": "61ccba1a0867eb0f040fd1da"
+  },
+  "number": 6,
+  "date": "6",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Faisalabad",
+  "to": "Hyderabad",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1250",
+  "bno": "8675"
+},{
+  "_id": {
+    "$oid": "61ccba4e0867eb0f040fd1db"
+  },
+  "number": 7,
+  "date": "7",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Faisalabad",
+  "to": "Quetta",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1500",
+  "bno": "1278"
+},{
+  "_id": {
+    "$oid": "61ccba680867eb0f040fd1dc"
+  },
+  "number": 8,
+  "date": "7",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Lahore",
+  "to": "Faisalabad",
+  "capacity": 35,
+  "available": 35,
+  "fare": "650",
+  "bno": "1234"
+},{
+  "_id": {
+    "$oid": "61ccba920867eb0f040fd1dd"
+  },
+  "number": 9,
+  "date": "1",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Lahore",
+  "to": "Islamabad",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1100",
+  "bno": "5678"
+},{
+  "_id": {
+    "$oid": "61ccbc4b0867eb0f040fd1df"
+  },
+  "number": 10,
+  "date": "2",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Lahore",
+  "to": "Multan",
+  "capacity": 35,
+  "available": 35,
+  "fare": "850",
+  "bno": "4321"
+},{
+  "_id": {
+    "$oid": "61ccbca50867eb0f040fd1e0"
+  },
+  "number": 11,
+  "date": "3",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Lahore",
+  "to": "Peshawer",
+  "capacity": 35,
+  "available": 35,
+  "fare": "750",
+  "bno": "8765"
+},{
+  "_id": {
+    "$oid": "61ccbd0a0867eb0f040fd1e1"
+  },
+  "number": 12,
+  "date": "4",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Lahore",
+  "to": "Karachi",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1800",
+  "bno": "4231"
+},{
+  "_id": {
+    "$oid": "61ccbd420867eb0f040fd1e2"
+  },
+  "number": 13,
+  "date": "5",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Lahore",
+  "to": "Hyderabad",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1750",
+  "bno": "8675"
+},{
+  "_id": {
+    "$oid": "61ccbd7d0867eb0f040fd1e3"
+  },
+  "number": 14,
+  "date": "6",
+  "month": "1",
+  "year": "2021",
+  "time": "7:00",
+  "from": "Lahore",
+  "to": "Quetta",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1750",
+  "bno": "1278"
+},{
+  "_id": {
+    "$oid": "61ccbdaa0867eb0f040fd1e4"
+  },
+  "number": 15,
+  "date": "6",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Islamabad",
+  "to": "Faisalabad",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1000",
+  "bno": "1234"
+},{
+  "_id": {
+    "$oid": "61ccbde90867eb0f040fd1e5"
+  },
+  "number": 16,
+  "date": "7",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Islamabad",
+  "to": "Lahore",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1100",
+  "bno": "5678"
+},{
+  "_id": {
+    "$oid": "61ccbe1b0867eb0f040fd1e6"
+  },
+  "number": 17,
+  "date": "1",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Islamabad",
+  "to": "Multan",
+  "capacity": 35,
+  "available": 35,
+  "fare": "1500",
+  "bno": "4321"
+},{
+  "_id": {
+    "$oid": "61ccbe530867eb0f040fd1e8"
+  },
+  "number": 18,
+  "date": "2",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Islamabad",
+  "to": "Peshawer",
+  "capacity": 35,
+  "available": 35,
+  "fare": "500",
+  "bno": "8765"
+},{
+  "_id": {
+    "$oid": "61ccbe940867eb0f040fd1e9"
+  },
+  "number": 19,
+  "date": "3",
+  "month": "1",
+  "year": "2021",
+  "time": "5:00",
+  "from": "Islamabad",
+  "to": "Karachi",
+  "capacity": 35,
+  "available": 35,
+  "fare": "2500",
+  "bno": "4231"
+},{
+  "_id": {
+    "$oid": "61ccbec20867eb0f040fd1ea"
+  },
+  "number": 20,
+  "date": "4",
+  "month": "1",
+  "year": "2021",
+  "time": "6:00",
+  "from": "Islamabad",
+  "to": "Hyderabad",
+  "capacity": 35,
+  "available": 35,
+  "fare": "2250",
+  "bno": "8675"
+},{
+  "_id": {
+    "$oid": "61ccbeff0867eb0f040fd1eb"
+  },
+  "number": 21,
+  "date": "5",
+  "month": "1",
+  "year": "2021",
+  "time": "7:00",
+  "from": "Islamabad",
+  "to": "Quetta",
+  "capacity": 35,
+  "available": 35,
+  "fare": "2500",
+  "bno": "1278"
+}]

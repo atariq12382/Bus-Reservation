@@ -1,8 +1,55 @@
-<h1 class="mt-4">About Us</h1>
-<%- include('./partials/footer') %>
-
-
-<style>
+<body>
+<%- include('./partials/navbar3') %>
+    <div class="container">
+  
+      <div class="wrapper">
+        <div class="hr">
+          <hr>
+          <h2>Our Mission</h2>
+          <hr>
+        </div>
+  
+        <p class="mission-txt">" To provide the best quality travel at minimum prices."</p>
+  
+      </div>
+  
+      <div  class="wrapper">
+        <h2>About Us</h2>
+        <div id="aboutimg">
+          <img src="/resources/png/Welcome_Crousel_Pic-1.png" alt="img">
+          <br></br>
+          <p>Daewoo Express is the first and the biggest foreign investment Company with an advanced and organized transport system in Pakistan. It is the only transport company to have a nationwide network with various international trade links. Being a transport service provider the company owns a large fleet of buses, Technically Advanced Workshops to maintain the fleet for the safety of the passengers, State of the Art Terminals, Training Institutes for Drivers and Mechanical Staff.
+            Daewoo Express has been rendering transport facilities since its inception in 1997 to the people of Pakistan.</p>
+        </div>
+      </div>
+  
+      <div class="wrapper">
+        <h2>Services</h2>
+        <div class="services">
+          <div class="unit">
+            <img src="/resources/png/service1.jpg" alt="">
+            <p>24/7 Reliable Bus Service</p>
+            <p>We provide quality service of travel 24/7. Our buses take you to your destinations safely.'</p>
+         
+          </div>
+          <div class="unit">
+            <img src="/resources/png/service2.jpg" alt="">
+            <p>Trained Trustworthy Staff</p>
+            <p>Our staff is highly trained and courteous about the passengers'</p>
+  
+          </div>
+          <div class="unit">
+            <img src="/resources/png/service3.jpg" alt="">
+            <p>Cargo Service</p>
+            <p>Your cargo is our cargo. We take your cargo safely to its destinations'</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </body>
+  <%- include('./partials/footer') %>
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
     *{
     margin: 0;
@@ -10,4 +57,94 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: white;
+      margin: 10px auto;
+      padding: 5px 30px;
+      width: 800px;
+      box-shadow: 0 0 5px black;
+    }
+
+    .hr {
+      display: flex;
+      align-items: center;
+    }
+
+    hr {
+      width: 30px;
+      height: 1px;
+      background: black;
+      margin: 0 15px;
+    }
+
+    h2 {
+      font-size: 25px;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    .mission-txt {
+      font-size: 18px;
+      font-weight: 500px;
+      font-style: italic;
+      margin-top: 0;
+    }
+
+    div img{ 
+      width: 75px;
+    }
+    p {
+      text-align: justify;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .unit {
+      margin: 25px;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .unit img {
+      border-radius: 100px;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
+    .unit p {
+      text-align: left;
+      margin: 2px;
+    }
+
+    .unit p:first-of-type {
+      font-weight: bolder;
+      margin-bottom: 5px;
+    }
+
+    @media screen and (max-width:820px) {
+      .wrapper {
+        width: 80%;
+        padding: 5px 30px;
+      }
+    }
   </style>
