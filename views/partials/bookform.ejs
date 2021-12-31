@@ -1,0 +1,77 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3">
+                <i class="fas fa-user-plus"></i> Ticket Details
+            </h1>
+            <form action="/ticket" method="POST">
+                <div class="form-group">
+                    <label for="name">
+                        Name
+                    </label>
+                    <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+                        value="" />
+                </div>
+                <div class="form-group">
+                    <label for="email">
+                        Email
+                    </label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+                        value="" />
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="contact" id="contact" name="contact" class="form-control" placeholder="Contact Number"
+                        value="" />
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="address" id="address" name="address" class="form-control" placeholder="Address"
+                        value="" />
+                </div>
+                    <div class="form-group">
+                        <label for="cnic">CNIC</label>
+                        <input type="cinc" id="cnic" name="cnic" class="form-control" placeholder="Enter Cnic" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="from">From</label>
+                        <input type="from" id="from" name="from" class="form-control" placeholder="From"
+                            value="<%= from%>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <input type="to" id="to" name="to" class="form-control" placeholder="To" value="<%= to%>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="day">Date</label>
+                        <input type="day" id="day" name="day" class="form-control" placeholder="day"
+                            value="<%= date%>/<%= month%>/<%= year%>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="fare">Fare</label>
+                        <input type="fare" id="fare" name="fare" class="form-control" placeholder="fare"
+                            value="<%= fare%>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="acctyp">Account Type</label>
+                        <input list="hosting-plan" type="acctyp" id="acctyp" name="acctyp" class="form-control"
+                            placeholder="Account Type">
+                        <datalist id="hosting-plan">
+                            <option value="Bank Account" />
+                            <option value="EasyPaisa" />
+                            <option value="JazzCash" />
+                        </datalist>
+                    </div>
+                    <div class="accno">
+                        <label for="accno">Account Number</label>
+                        <input type="accno" id="accno" name="accno" class="form-control" placeholder="Account Number"
+                            value="" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px;">
+                        Buy
+                    </button>
+            </form>
+        </div>
+    </div>
+</div>

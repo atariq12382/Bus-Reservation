@@ -36,6 +36,42 @@
               <li><a class="dropdown-item" href="/schedule/to/Quetta/1">Quetta</a></li>
             </ul>
           </div>
+          <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Search Criteria</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                  <label data-error="wrong" data-success="right" for="orangeForm-name">From</label>
+                  <input type="from" id="from" class="form-control validate" placeholder="i.e: Faisalabad">
+                </div>
+                <div class="md-form mb-5">
+                  <label data-error="wrong" data-success="right" for="orangeForm-email">To</label>
+                  <input type="to" id="to" class="form-control validate" placeholder="i.e: Lahore">
+                </div>
+                <div class="md-form mb-4">
+                  <label data-error="wrong" data-success="right" for="orangeForm-pass">Date</label>
+                  <input type="day" id="day" class="form-control validate" placeholder="i.e: 1" style="margin-top: 5px;">
+                  <input type="month" id="month" class="form-control validate" placeholder="i.e: 1" style="margin-top: 5px;">
+                  <input type="year" id="year" class="form-control validate" placeholder="i.e: 2021" style="margin-top: 5px;">
+                </div>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-success">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center" style="float: right;">
+          <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalRegisterForm">Search</button>
+        </div>
           <table class="table table-striped table-hover table-bordered">
             <thead>
               <tr>
@@ -61,7 +97,7 @@
                 <td><%= routes[a].available%></td>
                 <td>Rs. <%= routes[a].fare%></td>
                 <td><%= routes[a].bno%></td>
-                <td style="align-items: center;"><button type="button" class="btn btn-success">Book</button></td>
+                <td style="align-items: center;"><a class="btn btn-success" role="button" aria-disabled="true" href="/book/<%= routes[a].from%>/<%= routes[a].to%>/<%= routes[a].date%>/<%= routes[a].month%>/<%= routes[a].year%>/<%= routes[a].fare%>">Book</a></td>
               </tr>
               <% } %>
             </tbody>
@@ -97,3 +133,14 @@
       </div>
     <%- include('./partials/footer') %>
 </body>
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+</style>
