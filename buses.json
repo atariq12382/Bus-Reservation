@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "61ccb71f0867eb0f040fd1cc"
+  },
+  "number": 1,
+  "rank": "Buisness",
+  "numberplate": "1234"
+},{
+  "_id": {
+    "$oid": "61ccb7880867eb0f040fd1cd"
+  },
+  "number": 2,
+  "rank": "Buisness",
+  "numberplate": "5678"
+},{
+  "_id": {
+    "$oid": "61ccb7b30867eb0f040fd1ce"
+  },
+  "number": 3,
+  "rank": "Economy",
+  "numberplate": "4321"
+},{
+  "_id": {
+    "$oid": "61ccb7ca0867eb0f040fd1cf"
+  },
+  "number": 4,
+  "rank": "Economy",
+  "numberplate": "8765"
+},{
+  "_id": {
+    "$oid": "61ccb7e80867eb0f040fd1d0"
+  },
+  "number": 5,
+  "rank": "Local",
+  "numberplate": "4231"
+},{
+  "_id": {
+    "$oid": "61ccb8090867eb0f040fd1d1"
+  },
+  "number": 6,
+  "rank": "Local",
+  "numberplate": "8675"
+},{
+  "_id": {
+    "$oid": "61ccb81e0867eb0f040fd1d2"
+  },
+  "number": 7,
+  "rank": "Local",
+  "numberplate": "1278"
+}]

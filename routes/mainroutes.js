@@ -16,6 +16,10 @@ router.get("/complaints" , (req, res) => {
   res.render("complaints", { layout: "layouts/layout" });
 });
 
+router.get("/terminals" , (req, res) => {
+  res.render("terminals", { user: req.user, isLoggedIn: req.isLogged, layout: "layouts/layout" });
+});
+
 router.post("/complaints", mainController.SaveComplaints);
 
 router.get("/schedule/:page", isLoggedIn, mainController.ShowSchedule);
