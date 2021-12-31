@@ -23,6 +23,12 @@ router.get("/schedule/:page", isLoggedIn, mainController.ShowSchedule);
 router.get("/schedule/fo/:from/:page", isLoggedIn, mainController.ShowScheduleFrom);
 
 router.get("/schedule/to/:to/:page", isLoggedIn, mainController.ShowScheduleTo);
+
+router.post("/searchschedule/:page", isLoggedIn, mainController.SearchSchedule);
+
+router.get("/book/:from/:to/:date/:month/:year/:fare", isLoggedIn, mainController.bookPage);
+
+router.post("/ticket", mainController.printout);
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {

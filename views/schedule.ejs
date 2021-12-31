@@ -1,99 +1,169 @@
 <body>
-    <%- include('./partials/navbar') %>
+  <%- include('./partials/navbar') %>
     <div class="container" style="padding-top: 30px;">
-        <div class="table-wrapper">
-          <div class="table-title">
-            <div class="row">
-              <div class="col-sm-8">
-                <h2>
-                  <b>Schedule</b>
-                </h2>
-              </div>
-            </div>
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2>
+              <b>Schedule</b>
+            </h2>
           </div>
-          <div class="dropdown" style="float: left; padding-top: 20px; padding-bottom: 20px; padding-right: 20px;" >
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              From
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="/schedule/fo/Faisalabad/1">Faisalabad</a></li>
-              <li><a class="dropdown-item" href="/schedule/fo/Lahore/1">Lahore</a></li>
-              <li><a class="dropdown-item" href="/schedule/fo/Islamabad/1">Islamabad</a></li>
-            </ul>
-          </div>
-          <div class="dropdown" style="float: left; padding: 20px;">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              To
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="/schedule/to/Faisalabad/1">Faisalabad</a></li>
-                <li><a class="dropdown-item" href="/schedule/to/Lahore/1">Lahore</a></li>
-                <li><a class="dropdown-item" href="/schedule/to/Islamabad/1">Islamabad</a></li>
-                <li><a class="dropdown-item" href="/schedule/to/Multan/1">Multan</a></li>
-                <li><a class="dropdown-item" href="/schedule/to/Peshawer/1">Peshawer</a></li>
-                <li><a class="dropdown-item" href="/schedule/to/Karachi/1">Karachi</a></li>
-                <li><a class="dropdown-item" href="/schedule/to/Hyderabad/1">Hyderabad</a></li>
-                <li><a class="dropdown-item" href="/schedule/to/Quetta/1">Quetta</a></li>
-            </ul>
-          </div>
-          <table class="table table-striped table-hover table-bordered">
-            <thead>
+        </div>
+      </div>
+      <div class="dropdown" style="float: left; padding-top: 20px; padding-bottom: 20px; padding-right: 20px;">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          From
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/schedule/fo/Faisalabad/1">Faisalabad</a></li>
+          <li><a class="dropdown-item" href="/schedule/fo/Lahore/1">Lahore</a></li>
+          <li><a class="dropdown-item" href="/schedule/fo/Islamabad/1">Islamabad</a></li>
+        </ul>
+      </div>
+      <div class="dropdown" style="float: left; padding: 20px;">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          To
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/schedule/to/Faisalabad/1">Faisalabad</a></li>
+          <li><a class="dropdown-item" href="/schedule/to/Lahore/1">Lahore</a></li>
+          <li><a class="dropdown-item" href="/schedule/to/Islamabad/1">Islamabad</a></li>
+          <li><a class="dropdown-item" href="/schedule/to/Multan/1">Multan</a></li>
+          <li><a class="dropdown-item" href="/schedule/to/Peshawer/1">Peshawer</a></li>
+          <li><a class="dropdown-item" href="/schedule/to/Karachi/1">Karachi</a></li>
+          <li><a class="dropdown-item" href="/schedule/to/Hyderabad/1">Hyderabad</a></li>
+          <li><a class="dropdown-item" href="/schedule/to/Quetta/1">Quetta</a></li>
+        </ul>
+      </div>
+      <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search Criteria</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/searchschedule/1" method="post">
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="orangeForm-name">From</label>
+          <input type="from" id="from" name="from" class="form-control validate" placeholder="i.e: Faisalabad">
+        </div>
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="orangeForm-email">To</label>
+          <input type="to" id="to" name="to" class="form-control validate" placeholder="i.e: Lahore">
+        </div>
+        <div class="md-form mb-4">
+          <label data-error="wrong" data-success="right" for="orangeForm-pass">Date</label>
+          <input type="day" id="day" name="day" class="form-control validate" placeholder="i.e: 1" style="margin-top: 5px;">
+          <input type="month" id="month" name="month" class="form-control validate" placeholder="i.e: 1" style="margin-top: 5px;">
+          <input type="year" id="year" name="year" class="form-control validate" placeholder="i.e: 2021" style="margin-top: 5px;">
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="submit" class="btn btn-outline-success">Search</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<div class="text-center" style="float: right;">
+  <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalRegisterForm">Search</button>
+</div>
+      <div class="table-wrapper">
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>Route Number</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Available</th>
+              <th>Fare</th>
+              <th>Bus Number</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (var a=0; a < routes.length; a++) { %>
               <tr>
-                <th>Route Number</th>
-                <th>From</th>
-                <th>To</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Available</th>
-                <th>Fare</th>
-                <th>Bus Number</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for (var a = 0; a < routes.length; a++) { %>
-              <tr>
-                <td><%= routes[a].number%></td>
-                <td><%= routes[a].from%></td>
-                <td><%= routes[a].to%></td>
-                <td><%= routes[a].date%>/<%= routes[a].month%>/<%= routes[a].year%></td>
-                <td><%= routes[a].time%> pm</td>
-                <td><%= routes[a].available%></td>
-                <td>Rs. <%= routes[a].fare%></td>
-                <td><%= routes[a].bno%></td>
-                <td style="align-items: center;"><button type="button" class="btn btn-success">Book</button></td>
+                <td>
+                  <%= routes[a].number%>
+                </td>
+                <td>
+                  <%= routes[a].from%>
+                </td>
+                <td>
+                  <%= routes[a].to%>
+                </td>
+                <td>
+                  <%= routes[a].date%>/<%= routes[a].month%>/<%= routes[a].year%>
+                </td>
+                <td>
+                  <%= routes[a].time%> pm
+                </td>
+                <td>
+                  <%= routes[a].available%>
+                </td>
+                <td>Rs. <%= routes[a].fare%>
+                </td>
+                <td>
+                  <%= routes[a].bno%>
+                </td>
+                <td style="align-items: center;"><a class="btn btn-success" role="button" aria-disabled="true" href="/book/<%= routes[a].from%>/<%= routes[a].to%>/<%= routes[a].date%>/<%= routes[a].month%>/<%= routes[a].year%>/<%= routes[a].fare%>">Book</a></td>
               </tr>
               <% } %>
-            </tbody>
-          </table>
-          <% if (pages > 0) { %>
-            <ul class="pagination">
-                <% if (current == 1) { %>
-                    <li class="disabled"><a class="page-link">First</a></li>
-                <% } else { %>
-                    <li class="page-item"><a href="/schedule/1" class="page-link">First</a></li>
+          </tbody>
+        </table>
+        <% if (pages> 0) { %>
+          <ul class="pagination">
+            <% if (current==1) { %>
+              <li class="disabled"><a class="page-link">First</a></li>
+              <% } else { %>
+                <li class="page-item"><a href="/schedule/1" class="page-link">First</a></li>
                 <% } %>
-                <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
-                <% if (i !== 1) { %>
-                    <li class="disabled"><a class="page-link">...</a></li>
-                <% } %>
-                <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
-                    <% if (i == current) { %>
-                        <li class="active page-item"><a class="page-link"><%= i %></a></li>
-                    <% } else { %>
-                        <li class="page-item"><a href="/schedule/<%= i %>" class="page-link"><%= i %></a></li>
-                    <% } %>
-                    <% if (i == Number(current) + 4 && i < pages) { %>
-                        <li class="disabled"><a class="page-link">...</a></li>
-                    <% } %>
-                <% } %>
-                <% if (current == pages) { %>
-                    <li class="disabled"><a class="page-link">Last</a></li>
-                <% } else { %>
-                    <li class="page-item"><a href="/schedule/<%= pages %>" class="page-link">Last</a></li>
-                <% } %>
-            </ul>
-        <% } %>
+                  <% var i=(Number(current)> 5 ? Number(current) - 4 : 1) %>
+                    <% if (i !==1) { %>
+                      <li class="disabled"><a class="page-link">...</a></li>
+                      <% } %>
+                        <% for (; i <=(Number(current) + 4) && i <=pages; i++) { %>
+                          <% if (i==current) { %>
+                            <li class="active page-item"><a class="page-link">
+                                <%= i %>
+                              </a></li>
+                            <% } else { %>
+                              <li class="page-item"><a href="/schedule/<%= i %>" class="page-link">
+                                  <%= i %>
+                                </a></li>
+                              <% } %>
+                                <% if (i==Number(current) + 4 && i < pages) { %>
+                                  <li class="disabled"><a class="page-link">...</a></li>
+                                  <% } %>
+                                    <% } %>
+                                      <% if (current==pages) { %>
+                                        <li class="disabled"><a class="page-link">Last</a></li>
+                                        <% } else { %>
+                                          <li class="page-item"><a href="/schedule/<%= pages %>"
+                                              class="page-link">Last</a></li>
+                                          <% } %>
+          </ul>
+          <% } %>
       </div>
-    <%- include('./partials/footer') %>
+      <%- include('./partials/footer') %>
 </body>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+</style>
